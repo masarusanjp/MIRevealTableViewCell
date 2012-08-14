@@ -33,7 +33,7 @@
 @synthesize frontContentView         = _frontContentView;
 @synthesize backContentView          = _backContentView;
 @synthesize revealCellDelegate       = _revealCellDelegate;
-
+@synthesize swipeEnabled             = _swipeEnabled;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -44,6 +44,7 @@
         self.backContentView  = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
         self.frontContentView.backgroundColor = [UIColor clearColor];
         self.backContentView.backgroundColor  = [UIColor clearColor];
+        self.swipeEnabled = YES;
         [self.contentView addSubview:self.backContentView];
         [self.contentView addSubview:self.frontContentView];
     }
@@ -70,67 +71,72 @@
 #pragma mark - Touches
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    self.startLocation = [[touches anyObject] locationInView:self.frontContentView];
-    self.currentLocation = self.contentView.frame.origin;
-    
-    for (int i = 0; i < kMIRevealTableViewCellPointsSize; i++) {
-        _directionPoints[i] = 0;
-    }
-    _directionPointCursor = 0;
-    
-    if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidBeginTouchesCell:)]) {
-        [self.revealCellDelegate revealTableViewCellDidBeginTouchesCell:self];
+    if (self.swipeEnabled) {
+        self.startLocation = [[touches anyObject] locationInView:self.frontContentView];
+        self.currentLocation = self.contentView.frame.origin;
+        
+        for (int i = 0; i < kMIRevealTableViewCellPointsSize; i++) {
+            _directionPoints[i] = 0;
+        }
+        _directionPointCursor = 0;
+        
+        if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidBeginTouchesCell:)]) {
+            [self.revealCellDelegate revealTableViewCellDidBeginTouchesCell:self];
+        }
     }
     
     [super touchesBegan:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-
-    CGPoint pt = [[touches anyObject] locationInView:self.frontContentView];
-    CGSize div = CGSizeMake(pt.x - self.startLocation.x, pt.y - self.startLocation.y);
-
-    [self setTableViewScrollEnabled:NO];
-    self.frontContentViewDragging = YES;
+    if (self.swipeEnabled) {
+        CGPoint pt = [[touches anyObject] locationInView:self.frontContentView];
+        CGSize div = CGSizeMake(pt.x - self.startLocation.x, pt.y - self.startLocation.y);
+        
+        [self setTableViewScrollEnabled:NO];
+        self.frontContentViewDragging = YES;
+        
+        
+        CGPoint currentLocation = self.currentLocation;
+        currentLocation.x += div.width;
+        currentLocation.y += div.height;
+        
+        // TODO:
+        if (currentLocation.x > 0) {
+            currentLocation.x = 0;
+        }
+        
+        [self addDirectionPointForLocation:currentLocation prevLocation:self.currentLocation];
+        self.currentLocation = currentLocation;
+        
+        CGRect r = self.frontContentView.frame;
+        r.origin.x = currentLocation.x;
+        self.frontContentView.frame = r;
     
-    
-    CGPoint currentLocation = self.currentLocation;
-    currentLocation.x += div.width;
-    currentLocation.y += div.height;
-    
-    // TODO:
-    if (currentLocation.x > 0) {
-        currentLocation.x = 0;
     }
-    
-    [self addDirectionPointForLocation:currentLocation prevLocation:self.currentLocation];
-    self.currentLocation = currentLocation;
-    
-    CGRect r = self.frontContentView.frame;
-    r.origin.x = currentLocation.x;
-    self.frontContentView.frame = r;
-    
     [super touchesMoved:touches withEvent:event];
 }
 
 - (void)touchesEndedProcess {
-    self.frontContentViewDragging = NO;
-    [self setTableViewScrollEnabled:YES];
-    
-    NSInteger direction = [self calcrateDraggingDirection];
-    if (abs(self.currentLocation.x - self.startLocation.x) < 2) {
-        [self hideBackContentViewAnimated:YES];
-    }
-    else {
-        if (direction == kMIRevealTableViewCellSlideDirectionLeft) {
-            [self showBackContentViewAnimated:YES];
-        }
-        else {
+    if (self.swipeEnabled) {
+        self.frontContentViewDragging = NO;
+        [self setTableViewScrollEnabled:YES];
+        
+        NSInteger direction = [self calcrateDraggingDirection];
+        if (abs(self.currentLocation.x - self.startLocation.x) < 2) {
             [self hideBackContentViewAnimated:YES];
         }
-    }
-    if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidEndTouchesCell:)]) {
-        [self.revealCellDelegate revealTableViewCellDidEndTouchesCell:self];
+        else {
+            if (direction == kMIRevealTableViewCellSlideDirectionLeft) {
+                [self showBackContentViewAnimated:YES];
+            }
+            else {
+                [self hideBackContentViewAnimated:YES];
+            }
+        }
+        if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidEndTouchesCell:)]) {
+            [self.revealCellDelegate revealTableViewCellDidEndTouchesCell:self];
+        }
     }
 }
 

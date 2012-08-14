@@ -11,6 +11,7 @@
 @implementation MIAppDelegate
 
 @synthesize navigationController = _navigationController;
+@synthesize window = _window;
 
 - (void)dealloc
 {

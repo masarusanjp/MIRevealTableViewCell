@@ -89,6 +89,7 @@
         [cell.backContentView addSubview:backLabel];
         cell.revealCellDelegate = self;
     }
+    cell.swipeEnabled = indexPath.row % 2 == 0;
     
     // Configure the cell...
     
