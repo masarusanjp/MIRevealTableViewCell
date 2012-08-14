@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D7D596D15D9F3CC00FCAB59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */; };
+		7D7D596F15D9F3CC00FCAB59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */; };
+		7D7D597115D9F3CC00FCAB59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */; };
+		7D7D597715D9F3CC00FCAB59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */; };
+		7D7D597915D9F3CC00FCAB59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D597815D9F3CC00FCAB59 /* main.m */; };
+		7D7D597D15D9F3CC00FCAB59 /* MIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */; };
+		7DE69E9915D9F552001B3E53 /* MIRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */; };
+		7DE69E9E15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIRevealTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7D7D597415D9F3CC00FCAB59 /* MIRevealTableViewCell-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIRevealTableViewCell-Info.plist"; sourceTree = "<group>"; };
+		7D7D597615D9F3CC00FCAB59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D7D597815D9F3CC00FCAB59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D7D597A15D9F3CC00FCAB59 /* MIRevealTableViewCell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIRevealTableViewCell-Prefix.pch"; sourceTree = "<group>"; };
+		7D7D597B15D9F3CC00FCAB59 /* MIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAppDelegate.h; sourceTree = "<group>"; };
+		7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAppDelegate.m; sourceTree = "<group>"; };
+		7DE69E9715D9F552001B3E53 /* MIRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRevealTableViewCell.h; sourceTree = "<group>"; };
+		7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRevealTableViewCell.m; sourceTree = "<group>"; };
+		7DE69E9C15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRevealCellDemoTableViewController.h; sourceTree = "<group>"; };
+		7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRevealCellDemoTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D7D596515D9F3CC00FCAB59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7D596D15D9F3CC00FCAB59 /* UIKit.framework in Frameworks */,
+				7D7D596F15D9F3CC00FCAB59 /* Foundation.framework in Frameworks */,
+				7D7D597115D9F3CC00FCAB59 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D7D595D15D9F3CC00FCAB59 = {
+			isa = PBXGroup;
+			children = (
+				7D7D597215D9F3CC00FCAB59 /* MIRevealTableViewCell */,
+				7D7D596B15D9F3CC00FCAB59 /* Frameworks */,
+				7D7D596915D9F3CC00FCAB59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D7D596915D9F3CC00FCAB59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D7D596B15D9F3CC00FCAB59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */,
+				7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */,
+				7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D7D597215D9F3CC00FCAB59 /* MIRevealTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7DE69E9B15DA03B1001B3E53 /* sample */,
+				7DE69E9715D9F552001B3E53 /* MIRevealTableViewCell.h */,
+				7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */,
+				7D7D597315D9F3CC00FCAB59 /* Supporting Files */,
+			);
+			path = MIRevealTableViewCell;
+			sourceTree = "<group>";
+		};
+		7D7D597315D9F3CC00FCAB59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D7D597415D9F3CC00FCAB59 /* MIRevealTableViewCell-Info.plist */,
+				7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */,
+				7D7D597815D9F3CC00FCAB59 /* main.m */,
+				7D7D597A15D9F3CC00FCAB59 /* MIRevealTableViewCell-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DE69E9B15DA03B1001B3E53 /* sample */ = {
+			isa = PBXGroup;
+			children = (
+				7D7D597B15D9F3CC00FCAB59 /* MIAppDelegate.h */,
+				7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */,
+				7DE69E9C15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.h */,
+				7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */,
+			);
+			name = sample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D7D596715D9F3CC00FCAB59 /* MIRevealTableViewCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D7D598015D9F3CC00FCAB59 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */;
+			buildPhases = (
+				7D7D596415D9F3CC00FCAB59 /* Sources */,
+				7D7D596515D9F3CC00FCAB59 /* Frameworks */,
+				7D7D596615D9F3CC00FCAB59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIRevealTableViewCell;
+			productName = MIRevealTableViewCell;
+			productReference = 7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D7D595F15D9F3CC00FCAB59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MI;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Masaru Ichikawa";
+			};
+			buildConfigurationList = 7D7D596215D9F3CC00FCAB59 /* Build configuration list for PBXProject "MIRevealTableViewCell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7D7D595D15D9F3CC00FCAB59;
+			productRefGroup = 7D7D596915D9F3CC00FCAB59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D7D596715D9F3CC00FCAB59 /* MIRevealTableViewCell */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D7D596615D9F3CC00FCAB59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7D597715D9F3CC00FCAB59 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D7D596415D9F3CC00FCAB59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D7D597915D9F3CC00FCAB59 /* main.m in Sources */,
+				7D7D597D15D9F3CC00FCAB59 /* MIAppDelegate.m in Sources */,
+				7DE69E9915D9F552001B3E53 /* MIRevealTableViewCell.m in Sources */,
+				7DE69E9E15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D7D597615D9F3CC00FCAB59 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D7D597E15D9F3CC00FCAB59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7D7D597F15D9F3CC00FCAB59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D7D598115D9F3CC00FCAB59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCell/MIRevealTableViewCell-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCell/MIRevealTableViewCell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7D7D598215D9F3CC00FCAB59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCell/MIRevealTableViewCell-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCell/MIRevealTableViewCell-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D7D596215D9F3CC00FCAB59 /* Build configuration list for PBXProject "MIRevealTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7D597E15D9F3CC00FCAB59 /* Debug */,
+				7D7D597F15D9F3CC00FCAB59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D7D598015D9F3CC00FCAB59 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D7D598115D9F3CC00FCAB59 /* Debug */,
+				7D7D598215D9F3CC00FCAB59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D7D595F15D9F3CC00FCAB59 /* Project object */;
+}
