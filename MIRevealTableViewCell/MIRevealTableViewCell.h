@@ -44,8 +44,10 @@ enum MIRevealTableViewCellSlideDirection {
 @optional
 - (void)revealTableViewCellDidBeginTouchesCell:(MIRevealTableViewCell*)cell;
 - (void)revealTableViewCellDidEndTouchesCell:(MIRevealTableViewCell*)cell;
+- (void)revealTableViewCellDidDragFrontView:(MIRevealTableViewCell*)cell position:(CGPoint)pos;
 - (void)revealTableViewCellWillShowBackContentView:(MIRevealTableViewCell*)cell;
 - (void)revealTableViewCellDidShowBackContentView:(MIRevealTableViewCell*)cell;
 - (void)revealTableViewCellWillHideBackContentView:(MIRevealTableViewCell*)cell;
 - (void)revealTableViewCellDidHideBackContentView:(MIRevealTableViewCell*)cell;
+
 @end

@@ -9,12 +9,15 @@
 #import "MIRevealTableViewCell.h"
 
 #define kMIRevealTableViewCellDefaultAnimationDuration 0.2
+#define kMIRevealTableViewCellBackViewShowThreshold 10
 
 @interface MIRevealTableViewCell()
 
 @property (nonatomic, assign) CGPoint startLocation;
-@property (nonatomic, assign) CGPoint currentLocation;
+@property (nonatomic, assign) CGPoint currentFrontContentViewOrigin;
+@property (nonatomic, assign) CGPoint startFrontContentViewOrigin;
 @property (nonatomic, assign) BOOL frontContentViewDragging;
+@property (nonatomic, assign) BOOL isFrontContentViewAnimating;
 @property (nonatomic, retain) UIView *frontContentView;
 @property (nonatomic, retain) UIView *backContentView;
 
@@ -27,13 +30,15 @@
 
 @implementation MIRevealTableViewCell
 
-@synthesize startLocation            = _startLocation;
-@synthesize currentLocation          = _currentLocation;
-@synthesize frontContentViewDragging = _frontContentViewDragging;
-@synthesize frontContentView         = _frontContentView;
-@synthesize backContentView          = _backContentView;
-@synthesize revealCellDelegate       = _revealCellDelegate;
-@synthesize swipeEnabled             = _swipeEnabled;
+@synthesize startLocation                 = _startLocation;
+@synthesize currentFrontContentViewOrigin = _currentFrontContentViewOrigin;
+@synthesize startFrontContentViewOrigin   = _startFrontContentViewOrigin;
+@synthesize frontContentViewDragging      = _frontContentViewDragging;
+@synthesize frontContentView              = _frontContentView;
+@synthesize backContentView               = _backContentView;
+@synthesize revealCellDelegate            = _revealCellDelegate;
+@synthesize swipeEnabled                  = _swipeEnabled;
+@synthesize isFrontContentViewAnimating   = _isFrontContentViewAnimating;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -62,9 +67,12 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    if (!self.frontContentViewDragging) {
-        self.backContentView.frame = self.contentView.bounds;
-        self.frontContentView.frame = self.contentView.bounds;
+    if (!self.frontContentViewDragging && !self.isFrontContentViewAnimating) {
+        CGRect r = self.backContentView.frame;
+        r.size = self.contentView.frame.size;
+        self.backContentView.frame = r;
+        r.origin = self.frontContentView.frame.origin;
+        self.frontContentView.frame = r;
     }
 }
 
@@ -73,7 +81,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if (self.swipeEnabled) {
         self.startLocation = [[touches anyObject] locationInView:self.frontContentView];
-        self.currentLocation = self.contentView.frame.origin;
+        self.currentFrontContentViewOrigin = self.contentView.frame.origin;
+        self.startFrontContentViewOrigin = self.currentFrontContentViewOrigin;
         
         for (int i = 0; i < kMIRevealTableViewCellPointsSize; i++) {
             _directionPoints[i] = 0;
@@ -90,14 +99,14 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if (self.swipeEnabled) {
+        
         CGPoint pt = [[touches anyObject] locationInView:self.frontContentView];
         CGSize div = CGSizeMake(pt.x - self.startLocation.x, pt.y - self.startLocation.y);
         
         [self setTableViewScrollEnabled:NO];
-        self.frontContentViewDragging = YES;
+
         
-        
-        CGPoint currentLocation = self.currentLocation;
+        CGPoint currentLocation = self.currentFrontContentViewOrigin;
         currentLocation.x += div.width;
         currentLocation.y += div.height;
         
@@ -106,8 +115,14 @@
             currentLocation.x = 0;
         }
         
-        [self addDirectionPointForLocation:currentLocation prevLocation:self.currentLocation];
-        self.currentLocation = currentLocation;
+        [self addDirectionPointForLocation:currentLocation prevLocation:self.currentFrontContentViewOrigin];
+        
+        self.currentFrontContentViewOrigin = currentLocation;
+        
+        
+        if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidDragFrontView:position:)]) {
+            [self.revealCellDelegate revealTableViewCellDidDragFrontView:self position:self.currentFrontContentViewOrigin];
+        }
         
         CGRect r = self.frontContentView.frame;
         r.origin.x = currentLocation.x;
@@ -123,7 +138,7 @@
         [self setTableViewScrollEnabled:YES];
         
         NSInteger direction = [self calcrateDraggingDirection];
-        if (abs(self.currentLocation.x - self.startLocation.x) < 2) {
+        if (fabs(self.currentFrontContentViewOrigin.x - self.startFrontContentViewOrigin.x) < kMIRevealTableViewCellBackViewShowThreshold) {
             [self hideBackContentViewAnimated:YES];
         }
         else {
@@ -156,7 +171,7 @@
 - (void)showBackContentViewAnimated:(BOOL)animated {
     CGRect r = self.frontContentView.frame;
     r.origin.x = -r.size.width;
-    
+     
     if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellWillShowBackContentView:)]) {
         [self.revealCellDelegate revealTableViewCellWillShowBackContentView:self];
     }
@@ -167,10 +182,11 @@
         if (width == 0) {
             width = 1;
         }
-        CGFloat t = duration * (width+self.currentLocation.x) / width;
+        CGFloat t = duration * (width+self.currentFrontContentViewOrigin.x) / width;
         if (t > duration) {
             t = duration;
         }
+        self.isFrontContentViewAnimating = YES;
         [UIView animateWithDuration:t
                              delay:0.0
                            options:UIViewAnimationCurveLinear
@@ -178,6 +194,7 @@
                             self.frontContentView.frame = r;
                         }
                         completion:^(BOOL finished) {
+                            self.isFrontContentViewAnimating = NO;
                             if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidShowBackContentView:)]) {
                                 [self.revealCellDelegate revealTableViewCellDidShowBackContentView:self];
                             }
@@ -206,10 +223,11 @@
             width = 1;
         }
         
-        CGFloat t = duration * (-self.currentLocation.x) / width;
+        CGFloat t = duration * (-self.currentFrontContentViewOrigin.x) / width;
         if (t > duration) {
             t = duration;
         }
+        self.isFrontContentViewAnimating = YES;
         [UIView animateWithDuration:t
                              delay:0.0
                            options:UIViewAnimationCurveLinear
@@ -217,6 +235,7 @@
                             self.frontContentView.frame = r;
                         }
                         completion:^(BOOL finished) {
+                            self.isFrontContentViewAnimating = NO;
                             if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidHideBackContentView:)]) {
                                 [self.revealCellDelegate revealTableViewCellDidHideBackContentView:self];
                             }
