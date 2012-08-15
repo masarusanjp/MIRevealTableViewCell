@@ -20,6 +20,8 @@
 @property (nonatomic, assign) BOOL isFrontContentViewAnimating;
 @property (nonatomic, retain) UIView *frontContentView;
 @property (nonatomic, retain) UIView *backContentView;
+@property (nonatomic, assign) BOOL isProtectAnimationShown;
+
 
 - (void)addDirectionPointForLocation:(CGPoint)currentLocation prevLocation:(CGPoint)prevLocation;
 - (NSInteger)calcrateDraggingDirection;
@@ -39,6 +41,9 @@
 @synthesize revealCellDelegate            = _revealCellDelegate;
 @synthesize swipeEnabled                  = _swipeEnabled;
 @synthesize isFrontContentViewAnimating   = _isFrontContentViewAnimating;
+@synthesize isSwipeProtectedWithAnimation = _isSwipeProtectedWithAnimation;
+@synthesize isProtectAnimating            = _isProtectAnimating;
+@synthesize isProtectAnimationShown       = _isProtectAnimationShown;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -79,11 +84,12 @@
 #pragma mark - Touches
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    self.isProtectAnimationShown = NO;
+    self.startLocation = [[touches anyObject] locationInView:self.frontContentView];
+    self.currentFrontContentViewOrigin = self.contentView.frame.origin;
+    self.startFrontContentViewOrigin = self.currentFrontContentViewOrigin;
+    
     if (self.swipeEnabled) {
-        self.startLocation = [[touches anyObject] locationInView:self.frontContentView];
-        self.currentFrontContentViewOrigin = self.contentView.frame.origin;
-        self.startFrontContentViewOrigin = self.currentFrontContentViewOrigin;
-        
         for (int i = 0; i < kMIRevealTableViewCellPointsSize; i++) {
             _directionPoints[i] = 0;
         }
@@ -98,27 +104,23 @@
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    CGPoint pt = [[touches anyObject] locationInView:self.frontContentView];
+    CGSize div = CGSizeMake(pt.x - self.startLocation.x, pt.y - self.startLocation.y);
+    CGPoint currentLocation = self.currentFrontContentViewOrigin;
+    currentLocation.x += div.width;
+    currentLocation.y += div.height;
+    
+    // TODO:
+    if (currentLocation.x > 0) {
+        currentLocation.x = 0;
+    }
+    
+    [self addDirectionPointForLocation:currentLocation prevLocation:self.currentFrontContentViewOrigin];
+    
+    self.currentFrontContentViewOrigin = currentLocation;
+    
     if (self.swipeEnabled) {
-        
-        CGPoint pt = [[touches anyObject] locationInView:self.frontContentView];
-        CGSize div = CGSizeMake(pt.x - self.startLocation.x, pt.y - self.startLocation.y);
-        
         [self setTableViewScrollEnabled:NO];
-
-        
-        CGPoint currentLocation = self.currentFrontContentViewOrigin;
-        currentLocation.x += div.width;
-        currentLocation.y += div.height;
-        
-        // TODO:
-        if (currentLocation.x > 0) {
-            currentLocation.x = 0;
-        }
-        
-        [self addDirectionPointForLocation:currentLocation prevLocation:self.currentFrontContentViewOrigin];
-        
-        self.currentFrontContentViewOrigin = currentLocation;
-        
         
         if ([self.revealCellDelegate respondsToSelector:@selector(revealTableViewCellDidDragFrontView:position:)]) {
             [self.revealCellDelegate revealTableViewCellDidDragFrontView:self position:self.currentFrontContentViewOrigin];
@@ -126,8 +128,14 @@
         
         CGRect r = self.frontContentView.frame;
         r.origin.x = currentLocation.x;
-        self.frontContentView.frame = r;
-    
+        self.frontContentView.frame = r;    
+    }
+    else {
+        if (fabs(self.currentFrontContentViewOrigin.x - self.startFrontContentViewOrigin.x) > 5) {
+            if (self.isSwipeProtectedWithAnimation && !self.isProtectAnimating && !self.isProtectAnimationShown) {
+                [self protectSwipeWithAnimation];
+            }
+        }
     }
     [super touchesMoved:touches withEvent:event];
 }
@@ -138,7 +146,7 @@
         [self setTableViewScrollEnabled:YES];
         
         NSInteger direction = [self calcrateDraggingDirection];
-        if (fabs(self.currentFrontContentViewOrigin.x - self.startFrontContentViewOrigin.x) < kMIRevealTableViewCellBackViewShowThreshold) {
+        if (fabs(self.frontContentView.frame.origin.x - self.startFrontContentViewOrigin.x) < kMIRevealTableViewCellBackViewShowThreshold) {
             [self hideBackContentViewAnimated:YES];
         }
         else {
@@ -247,6 +255,45 @@
             [self.revealCellDelegate revealTableViewCellDidHideBackContentView:self];
         }
     }
+}
+
+- (void)quakeAnimationWithWidth:(CGFloat)width {
+    [UIView animateWithDuration:0.1
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         CGRect r = self.frontContentView.frame;
+                         r.origin.x = width;
+                         self.frontContentView.frame = r;
+                     } completion:^(BOOL finished) {
+                         [UIView animateWithDuration:0.1
+                                               delay:0.0
+                                             options:UIViewAnimationOptionCurveEaseOut
+                                          animations:^{
+                                              CGRect r = self.frontContentView.frame;
+                                              r.origin.x = -(width - 2);
+                                              if (fabs(r.origin.x) < 1) {
+                                                  r.origin.x = 0;
+                                              }
+                                              self.frontContentView.frame = r;
+                                          } completion:^(BOOL finished) {
+                                              if (fabs(self.frontContentView.frame.origin.x) > 1) {
+                                                  [self quakeAnimationWithWidth:width - 4];
+                                              }
+                                              else {
+                                                  self.isProtectAnimating = NO;
+                                                  self.isProtectAnimationShown = YES;
+                                              }
+                                          }
+                          ];
+                     }
+     ];
+    
+}
+
+- (void)protectSwipeWithAnimation {    
+    self.isProtectAnimating = YES;
+    [self quakeAnimationWithWidth:10];
 }
 
 #pragma mark - helper functions

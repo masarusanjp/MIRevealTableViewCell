@@ -34,9 +34,12 @@ enum MIRevealTableViewCellSlideDirection {
 @property (nonatomic, readonly, retain) UIView *backContentView;
 @property (nonatomic, assign) id<MIRevealTableViewCellDelegate> revealCellDelegate;
 @property (nonatomic, assign) BOOL swipeEnabled; // default YES
+@property (nonatomic, assign) BOOL isSwipeProtectedWithAnimation; // default NO
+@property (nonatomic, assign) BOOL isProtectAnimating;
 
 - (void)showBackContentViewAnimated:(BOOL)animated;
 - (void)hideBackContentViewAnimated:(BOOL)animated;
+- (void)protectSwipeWithAnimation;
 
 @end
 
