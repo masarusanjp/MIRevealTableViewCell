@@ -43,6 +43,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.delaysContentTouches = NO;
 }
 
 - (void)viewDidUnload
@@ -82,14 +83,14 @@
         UILabel *backLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
         backLabel.text = @"Back view";
         backLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        backLabel.backgroundColor = [UIColor blueColor];
+        backLabel.backgroundColor = [UIColor blackColor];
+        backLabel.textColor = [UIColor whiteColor];
         cell.frontContentView.backgroundColor = [UIColor whiteColor];
-        cell.backContentView.backgroundColor = [UIColor blueColor];
+        cell.backContentView.backgroundColor = [UIColor blackColor];
         [cell.frontContentView addSubview:frontLabel];
         [cell.backContentView addSubview:backLabel];
         cell.revealCellDelegate = self;
     }
-    cell.swipeEnabled = indexPath.row % 2 == 0;
     
     // Configure the cell...
     
@@ -137,6 +138,15 @@
 
 #pragma mark - Table view delegate
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.activeCell) {
+        if (self.activeCell.isFrontContentViewAnimating) {
+            return nil;
+        }
+    }
+    return indexPath;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -164,12 +174,14 @@
     }    
 }
 
-- (void)revealTableViewCellDidShowBackContentView:(MIRevealTableViewCell*)cell {
+- (void)revealTableViewCellWillShowBackContentView:(MIRevealTableViewCell*)cell {
     self.activeCell = cell;
+    self.tableView.allowsSelection = NO;
 }
 
-- (void)revealTableViewCellDidHideBackContentView:(MIRevealTableViewCell*)cell {
+- (void)revealTableViewCellWillHideBackContentView:(MIRevealTableViewCell*)cell {
     self.activeCell = nil;
+    self.tableView.allowsSelection = YES;
 }
 
 
