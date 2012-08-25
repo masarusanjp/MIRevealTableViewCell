@@ -7,117 +7,210 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7D596D15D9F3CC00FCAB59 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */; };
-		7D7D596F15D9F3CC00FCAB59 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */; };
-		7D7D597115D9F3CC00FCAB59 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */; };
-		7D7D597715D9F3CC00FCAB59 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */; };
-		7D7D597915D9F3CC00FCAB59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D597815D9F3CC00FCAB59 /* main.m */; };
-		7D7D597D15D9F3CC00FCAB59 /* MIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */; };
-		7DE69E9915D9F552001B3E53 /* MIRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */; };
-		7DE69E9E15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */; };
+		1EF1681BB5BD4BEF9B50DCD1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F94D44AD15462D9ECB904A /* libPods.a */; };
+		7D40820515E9349A00B1F591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40820415E9349A00B1F591 /* Foundation.framework */; };
+		7D40820A15E9349A00B1F591 /* MIRevealTableViewCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7D40820915E9349A00B1F591 /* MIRevealTableViewCell.h */; };
+		7D40820C15E9349A00B1F591 /* MIRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40820B15E9349A00B1F591 /* MIRevealTableViewCell.m */; };
+		7D40824D15E93CC300B1F591 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40824C15E93CC300B1F591 /* UIKit.framework */; };
+		7D40824E15E93CC300B1F591 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40820415E9349A00B1F591 /* Foundation.framework */; };
+		7D40825015E93CC300B1F591 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40824F15E93CC300B1F591 /* CoreGraphics.framework */; };
+		7D40825615E93CC300B1F591 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D40825415E93CC300B1F591 /* InfoPlist.strings */; };
+		7D40825815E93CC300B1F591 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40825715E93CC300B1F591 /* main.m */; };
+		7D40825C15E93CC300B1F591 /* MIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40825B15E93CC300B1F591 /* MIAppDelegate.m */; };
+		7D8D69F615E93E0500986600 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40824C15E93CC300B1F591 /* UIKit.framework */; };
+		7D8D69F715E93E0500986600 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40820415E9349A00B1F591 /* Foundation.framework */; };
+		7D8D69F815E93E0500986600 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D40824F15E93CC300B1F591 /* CoreGraphics.framework */; };
+		7D8D69FE15E93E0500986600 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D8D69FC15E93E0500986600 /* InfoPlist.strings */; };
+		7D8D6A0015E93E0500986600 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8D69FF15E93E0500986600 /* main.m */; };
+		7DD4ECD515E9417700969FF4 /* MIRevealCellDemoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4ECD415E9417700969FF4 /* MIRevealCellDemoTableViewController.m */; };
+		7DD4ECD615E941D100969FF4 /* MIRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40820B15E9349A00B1F591 /* MIRevealTableViewCell.m */; };
+		7DD4ECD715E941D200969FF4 /* MIRevealTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D40820B15E9349A00B1F591 /* MIRevealTableViewCell.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D4081FF15E9349A00B1F591 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				7D40820A15E9349A00B1F591 /* MIRevealTableViewCell.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIRevealTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		7D7D597415D9F3CC00FCAB59 /* MIRevealTableViewCell-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIRevealTableViewCell-Info.plist"; sourceTree = "<group>"; };
-		7D7D597615D9F3CC00FCAB59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7D7D597815D9F3CC00FCAB59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7D7D597A15D9F3CC00FCAB59 /* MIRevealTableViewCell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIRevealTableViewCell-Prefix.pch"; sourceTree = "<group>"; };
-		7D7D597B15D9F3CC00FCAB59 /* MIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAppDelegate.h; sourceTree = "<group>"; };
-		7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAppDelegate.m; sourceTree = "<group>"; };
-		7DE69E9715D9F552001B3E53 /* MIRevealTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRevealTableViewCell.h; sourceTree = "<group>"; };
-		7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRevealTableViewCell.m; sourceTree = "<group>"; };
-		7DE69E9C15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRevealCellDemoTableViewController.h; sourceTree = "<group>"; };
-		7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRevealCellDemoTableViewController.m; sourceTree = "<group>"; };
+		38F94D44AD15462D9ECB904A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		7D40820115E9349A00B1F591 /* libMIRevealTableViewCell.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMIRevealTableViewCell.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D40820415E9349A00B1F591 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7D40820815E9349A00B1F591 /* MIRevealTableViewCell-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIRevealTableViewCell-Prefix.pch"; sourceTree = "<group>"; };
+		7D40820915E9349A00B1F591 /* MIRevealTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIRevealTableViewCell.h; sourceTree = "<group>"; };
+		7D40820B15E9349A00B1F591 /* MIRevealTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIRevealTableViewCell.m; sourceTree = "<group>"; };
+		7D40824A15E93CC300B1F591 /* MIRevealTableViewCellDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIRevealTableViewCellDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D40824C15E93CC300B1F591 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7D40824F15E93CC300B1F591 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7D40825315E93CC300B1F591 /* MIRevealTableViewCellDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIRevealTableViewCellDemo-Info.plist"; sourceTree = "<group>"; };
+		7D40825515E93CC300B1F591 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D40825715E93CC300B1F591 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D40825915E93CC300B1F591 /* MIRevealTableViewCellDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIRevealTableViewCellDemo-Prefix.pch"; sourceTree = "<group>"; };
+		7D40825A15E93CC300B1F591 /* MIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MIAppDelegate.h; sourceTree = "<group>"; };
+		7D40825B15E93CC300B1F591 /* MIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MIAppDelegate.m; sourceTree = "<group>"; };
+		7D8D69F415E93E0500986600 /* MIRevealTableViewCellTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIRevealTableViewCellTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8D69FB15E93E0500986600 /* MIRevealTableViewCellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MIRevealTableViewCellTests-Info.plist"; sourceTree = "<group>"; };
+		7D8D69FD15E93E0500986600 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D8D69FF15E93E0500986600 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7D8D6A0115E93E0500986600 /* MIRevealTableViewCellTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MIRevealTableViewCellTests-Prefix.pch"; sourceTree = "<group>"; };
+		7DD4ECD315E9417700969FF4 /* MIRevealCellDemoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIRevealCellDemoTableViewController.h; sourceTree = "<group>"; };
+		7DD4ECD415E9417700969FF4 /* MIRevealCellDemoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIRevealCellDemoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7D7D596515D9F3CC00FCAB59 /* Frameworks */ = {
+		7D4081FE15E9349A00B1F591 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D596D15D9F3CC00FCAB59 /* UIKit.framework in Frameworks */,
-				7D7D596F15D9F3CC00FCAB59 /* Foundation.framework in Frameworks */,
-				7D7D597115D9F3CC00FCAB59 /* CoreGraphics.framework in Frameworks */,
+				7D40820515E9349A00B1F591 /* Foundation.framework in Frameworks */,
+				1EF1681BB5BD4BEF9B50DCD1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D40824715E93CC300B1F591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D40824D15E93CC300B1F591 /* UIKit.framework in Frameworks */,
+				7D40824E15E93CC300B1F591 /* Foundation.framework in Frameworks */,
+				7D40825015E93CC300B1F591 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8D69F115E93E0500986600 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8D69F615E93E0500986600 /* UIKit.framework in Frameworks */,
+				7D8D69F715E93E0500986600 /* Foundation.framework in Frameworks */,
+				7D8D69F815E93E0500986600 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D7D595D15D9F3CC00FCAB59 = {
+		7D4081F615E9349900B1F591 = {
 			isa = PBXGroup;
 			children = (
-				7D7D597215D9F3CC00FCAB59 /* MIRevealTableViewCell */,
-				7D7D596B15D9F3CC00FCAB59 /* Frameworks */,
-				7D7D596915D9F3CC00FCAB59 /* Products */,
+				7D40820615E9349A00B1F591 /* MIRevealTableViewCell */,
+				7D40825115E93CC300B1F591 /* MIRevealTableViewCellDemo */,
+				7D8D69F915E93E0500986600 /* MIRevealTableViewCellTests */,
+				7D40820315E9349A00B1F591 /* Frameworks */,
+				7D40820215E9349A00B1F591 /* Products */,
+				5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
-		7D7D596915D9F3CC00FCAB59 /* Products */ = {
+		7D40820215E9349A00B1F591 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */,
+				7D40820115E9349A00B1F591 /* libMIRevealTableViewCell.a */,
+				7D40824A15E93CC300B1F591 /* MIRevealTableViewCellDemo.app */,
+				7D8D69F415E93E0500986600 /* MIRevealTableViewCellTests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7D7D596B15D9F3CC00FCAB59 /* Frameworks */ = {
+		7D40820315E9349A00B1F591 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D596C15D9F3CC00FCAB59 /* UIKit.framework */,
-				7D7D596E15D9F3CC00FCAB59 /* Foundation.framework */,
-				7D7D597015D9F3CC00FCAB59 /* CoreGraphics.framework */,
+				7D40820415E9349A00B1F591 /* Foundation.framework */,
+				38F94D44AD15462D9ECB904A /* libPods.a */,
+				7D40824C15E93CC300B1F591 /* UIKit.framework */,
+				7D40824F15E93CC300B1F591 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D7D597215D9F3CC00FCAB59 /* MIRevealTableViewCell */ = {
+		7D40820615E9349A00B1F591 /* MIRevealTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				7DE69E9B15DA03B1001B3E53 /* sample */,
-				7DE69E9715D9F552001B3E53 /* MIRevealTableViewCell.h */,
-				7DE69E9815D9F552001B3E53 /* MIRevealTableViewCell.m */,
-				7D7D597315D9F3CC00FCAB59 /* Supporting Files */,
+				7D40820915E9349A00B1F591 /* MIRevealTableViewCell.h */,
+				7D40820B15E9349A00B1F591 /* MIRevealTableViewCell.m */,
+				7D40820715E9349A00B1F591 /* Supporting Files */,
 			);
 			path = MIRevealTableViewCell;
 			sourceTree = "<group>";
 		};
-		7D7D597315D9F3CC00FCAB59 /* Supporting Files */ = {
+		7D40820715E9349A00B1F591 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D597415D9F3CC00FCAB59 /* MIRevealTableViewCell-Info.plist */,
-				7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */,
-				7D7D597815D9F3CC00FCAB59 /* main.m */,
-				7D7D597A15D9F3CC00FCAB59 /* MIRevealTableViewCell-Prefix.pch */,
+				7D40820815E9349A00B1F591 /* MIRevealTableViewCell-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7DE69E9B15DA03B1001B3E53 /* sample */ = {
+		7D40825115E93CC300B1F591 /* MIRevealTableViewCellDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7D7D597B15D9F3CC00FCAB59 /* MIAppDelegate.h */,
-				7D7D597C15D9F3CC00FCAB59 /* MIAppDelegate.m */,
-				7DE69E9C15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.h */,
-				7DE69E9D15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m */,
+				7DD4ECD315E9417700969FF4 /* MIRevealCellDemoTableViewController.h */,
+				7DD4ECD415E9417700969FF4 /* MIRevealCellDemoTableViewController.m */,
+				7D40825A15E93CC300B1F591 /* MIAppDelegate.h */,
+				7D40825B15E93CC300B1F591 /* MIAppDelegate.m */,
+				7D40825215E93CC300B1F591 /* Supporting Files */,
 			);
-			name = sample;
+			path = MIRevealTableViewCellDemo;
+			sourceTree = "<group>";
+		};
+		7D40825215E93CC300B1F591 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D40825315E93CC300B1F591 /* MIRevealTableViewCellDemo-Info.plist */,
+				7D40825415E93CC300B1F591 /* InfoPlist.strings */,
+				7D40825715E93CC300B1F591 /* main.m */,
+				7D40825915E93CC300B1F591 /* MIRevealTableViewCellDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D8D69F915E93E0500986600 /* MIRevealTableViewCellTests */ = {
+			isa = PBXGroup;
+			children = (
+				7DD4ECD215E9406600969FF4 /* Tests */,
+				7D8D69FA15E93E0500986600 /* Supporting Files */,
+			);
+			path = MIRevealTableViewCellTests;
+			sourceTree = "<group>";
+		};
+		7D8D69FA15E93E0500986600 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D8D69FB15E93E0500986600 /* MIRevealTableViewCellTests-Info.plist */,
+				7D8D69FC15E93E0500986600 /* InfoPlist.strings */,
+				7D8D69FF15E93E0500986600 /* main.m */,
+				7D8D6A0115E93E0500986600 /* MIRevealTableViewCellTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD4ECD215E9406600969FF4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7D7D596715D9F3CC00FCAB59 /* MIRevealTableViewCell */ = {
+		7D40820015E9349A00B1F591 /* MIRevealTableViewCell */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7D7D598015D9F3CC00FCAB59 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */;
+			buildConfigurationList = 7D40820F15E9349A00B1F591 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */;
 			buildPhases = (
-				7D7D596415D9F3CC00FCAB59 /* Sources */,
-				7D7D596515D9F3CC00FCAB59 /* Frameworks */,
-				7D7D596615D9F3CC00FCAB59 /* Resources */,
+				7D4081FD15E9349A00B1F591 /* Sources */,
+				7D4081FE15E9349A00B1F591 /* Frameworks */,
+				7D4081FF15E9349A00B1F591 /* CopyFiles */,
+				2B543CD0984D4D629425392F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,66 +218,151 @@
 			);
 			name = MIRevealTableViewCell;
 			productName = MIRevealTableViewCell;
-			productReference = 7D7D596815D9F3CC00FCAB59 /* MIRevealTableViewCell.app */;
+			productReference = 7D40820115E9349A00B1F591 /* libMIRevealTableViewCell.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7D40824915E93CC300B1F591 /* MIRevealTableViewCellDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D40825F15E93CC300B1F591 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCellDemo" */;
+			buildPhases = (
+				7D40824615E93CC300B1F591 /* Sources */,
+				7D40824715E93CC300B1F591 /* Frameworks */,
+				7D40824815E93CC300B1F591 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIRevealTableViewCellDemo;
+			productName = MIRevealTableViewCellDemo;
+			productReference = 7D40824A15E93CC300B1F591 /* MIRevealTableViewCellDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D8D69F315E93E0500986600 /* MIRevealTableViewCellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D8D6A0715E93E0500986600 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCellTests" */;
+			buildPhases = (
+				7D8D69F015E93E0500986600 /* Sources */,
+				7D8D69F115E93E0500986600 /* Frameworks */,
+				7D8D69F215E93E0500986600 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MIRevealTableViewCellTests;
+			productName = MIRevealTableViewCellTests;
+			productReference = 7D8D69F415E93E0500986600 /* MIRevealTableViewCellTests.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7D7D595F15D9F3CC00FCAB59 /* Project object */ = {
+		7D4081F815E9349900B1F591 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MI;
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Masaru Ichikawa";
 			};
-			buildConfigurationList = 7D7D596215D9F3CC00FCAB59 /* Build configuration list for PBXProject "MIRevealTableViewCell" */;
+			buildConfigurationList = 7D4081FB15E9349900B1F591 /* Build configuration list for PBXProject "MIRevealTableViewCell" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7D7D595D15D9F3CC00FCAB59;
-			productRefGroup = 7D7D596915D9F3CC00FCAB59 /* Products */;
+			mainGroup = 7D4081F615E9349900B1F591;
+			productRefGroup = 7D40820215E9349A00B1F591 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7D7D596715D9F3CC00FCAB59 /* MIRevealTableViewCell */,
+				7D40820015E9349A00B1F591 /* MIRevealTableViewCell */,
+				7D40824915E93CC300B1F591 /* MIRevealTableViewCellDemo */,
+				7D8D69F315E93E0500986600 /* MIRevealTableViewCellTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7D7D596615D9F3CC00FCAB59 /* Resources */ = {
+		7D40824815E93CC300B1F591 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D597715D9F3CC00FCAB59 /* InfoPlist.strings in Resources */,
+				7D40825615E93CC300B1F591 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8D69F215E93E0500986600 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8D69FE15E93E0500986600 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2B543CD0984D4D629425392F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		7D7D596415D9F3CC00FCAB59 /* Sources */ = {
+		7D4081FD15E9349A00B1F591 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7D597915D9F3CC00FCAB59 /* main.m in Sources */,
-				7D7D597D15D9F3CC00FCAB59 /* MIAppDelegate.m in Sources */,
-				7DE69E9915D9F552001B3E53 /* MIRevealTableViewCell.m in Sources */,
-				7DE69E9E15DA03D5001B3E53 /* MIRevealCellDemoTableViewController.m in Sources */,
+				7D40820C15E9349A00B1F591 /* MIRevealTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D40824615E93CC300B1F591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D40825815E93CC300B1F591 /* main.m in Sources */,
+				7D40825C15E93CC300B1F591 /* MIAppDelegate.m in Sources */,
+				7DD4ECD515E9417700969FF4 /* MIRevealCellDemoTableViewController.m in Sources */,
+				7DD4ECD615E941D100969FF4 /* MIRevealTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8D69F015E93E0500986600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8D6A0015E93E0500986600 /* main.m in Sources */,
+				7DD4ECD715E941D200969FF4 /* MIRevealTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D7D597515D9F3CC00FCAB59 /* InfoPlist.strings */ = {
+		7D40825415E93CC300B1F591 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7D7D597615D9F3CC00FCAB59 /* en */,
+				7D40825515E93CC300B1F591 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7D8D69FC15E93E0500986600 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D8D69FD15E93E0500986600 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -192,14 +370,13 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7D7D597E15D9F3CC00FCAB59 /* Debug */ = {
+		7D40820D15E9349A00B1F591 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -218,14 +395,13 @@
 			};
 			name = Debug;
 		};
-		7D7D597F15D9F3CC00FCAB59 /* Release */ = {
+		7D40820E15E9349A00B1F591 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -233,29 +409,86 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		7D7D598115D9F3CC00FCAB59 /* Debug */ = {
+		7D40821015E9349A00B1F591 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
 			buildSettings = {
+				DSTROOT = /tmp/MIRevealTableViewCell.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MIRevealTableViewCell/MIRevealTableViewCell-Prefix.pch";
-				INFOPLIST_FILE = "MIRevealTableViewCell/MIRevealTableViewCell-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7D40821115E9349A00B1F591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/MIRevealTableViewCell.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCell/MIRevealTableViewCell-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7D40825D15E93CC300B1F591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCellDemo/MIRevealTableViewCellDemo-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCellDemo/MIRevealTableViewCellDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		7D7D598215D9F3CC00FCAB59 /* Release */ = {
+		7D40825E15E93CC300B1F591 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MIRevealTableViewCell/MIRevealTableViewCell-Prefix.pch";
-				INFOPLIST_FILE = "MIRevealTableViewCell/MIRevealTableViewCell-Info.plist";
+				GCC_PREFIX_HEADER = "MIRevealTableViewCellDemo/MIRevealTableViewCellDemo-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCellDemo/MIRevealTableViewCellDemo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7D8D6A0515E93E0500986600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCellTests/MIRevealTableViewCellTests-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCellTests/MIRevealTableViewCellTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7D8D6A0615E93E0500986600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC3EFCE40514BEFBEF23358 /* Pods.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MIRevealTableViewCellTests/MIRevealTableViewCellTests-Prefix.pch";
+				INFOPLIST_FILE = "MIRevealTableViewCellTests/MIRevealTableViewCellTests-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -264,25 +497,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7D7D596215D9F3CC00FCAB59 /* Build configuration list for PBXProject "MIRevealTableViewCell" */ = {
+		7D4081FB15E9349900B1F591 /* Build configuration list for PBXProject "MIRevealTableViewCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7D7D597E15D9F3CC00FCAB59 /* Debug */,
-				7D7D597F15D9F3CC00FCAB59 /* Release */,
+				7D40820D15E9349A00B1F591 /* Debug */,
+				7D40820E15E9349A00B1F591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7D7D598015D9F3CC00FCAB59 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */ = {
+		7D40820F15E9349A00B1F591 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7D7D598115D9F3CC00FCAB59 /* Debug */,
-				7D7D598215D9F3CC00FCAB59 /* Release */,
+				7D40821015E9349A00B1F591 /* Debug */,
+				7D40821115E9349A00B1F591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D40825F15E93CC300B1F591 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCellDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D40825D15E93CC300B1F591 /* Debug */,
+				7D40825E15E93CC300B1F591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D8D6A0715E93E0500986600 /* Build configuration list for PBXNativeTarget "MIRevealTableViewCellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D8D6A0515E93E0500986600 /* Debug */,
+				7D8D6A0615E93E0500986600 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7D7D595F15D9F3CC00FCAB59 /* Project object */;
+	rootObject = 7D4081F815E9349900B1F591 /* Project object */;
 }

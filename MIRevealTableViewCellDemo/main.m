@@ -1,8 +1,8 @@
 //
 //  main.m
-//  MIRevealTableViewCell
+//  MIRevealTableViewCellDemo
 //
-//  Created by 市川 勝 on 2012/08/14.
+//  Created by 市川 勝 on 2012/08/26.
 //  Copyright (c) 2012年 Masaru Ichikawa. All rights reserved.
 //
 
